@@ -4,7 +4,7 @@ const config = {
     user: 'sa',
     password: '',//Your Password
     server: '',//Your Server
-    database: 'SE',//Your Database
+    database: '',//Your Database
     options: {
         encrypt: false,
         trustServerCertificate: true

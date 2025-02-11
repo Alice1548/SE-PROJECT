@@ -9,9 +9,10 @@ app.use(express.json());
 
 // นำเข้าไฟล์ API
 const usersApi = require('./API/users'); // ใช้เส้นทางที่ถูกต้อง
-
+const authApi = require('./API/auth');
 // กำหนดให้ API `/api/users` ใช้งาน router จาก `users.js`
 app.use('/api/users', usersApi);
+app.use('/api/auth',authApi);
 
 app.get("/", (req, res) => {
   res.send("Backend is running!");

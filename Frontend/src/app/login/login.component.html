@@ -1,0 +1,65 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Login</h3>
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              required
+              [(ngModel)]="username"
+              name="username"
+              #usernameField="ngModel"
+            />
+            <div *ngIf="usernameField.invalid && usernameField.touched" class="text-danger">
+              Username is required.
+            </div>
+          </div>
+  
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              required
+              [(ngModel)]="password"
+              name="password"
+              #passwordField="ngModel"
+            />
+            <div *ngIf="passwordField.invalid && passwordField.touched" class="text-danger">
+              Password is required.
+            </div>
+          </div>
+  
+          <!-- Login Button -->
+          <div class="d-grid mb-3">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="loginForm.invalid"
+            >
+              Login
+            </button>
+          </div>
+  
+          <!-- Forgot Password Link -->
+          <div class="text-center">
+            <a href="#" class="text-decoration-none text-secondary" (click)="onForgotPassword()">Forgot Password?</a>
+          </div>
+  
+          <!-- Create New Account Link -->
+          <div class="text-center mt-3">
+            <span>Don't have an account?</span>
+            <a href="#" class="text-decoration-none text-primary" (click)="onCreateAccount()">Create New Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
