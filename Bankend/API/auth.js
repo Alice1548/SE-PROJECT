@@ -36,7 +36,7 @@ router.post("/login", async (req, res) => {
         }
 
         const token = jwt.sign({ id: user.user_id, role: user.role }, JWT_SECRET, { expiresIn: "1h" });  // ใช้ user_id และ role
-        res.send({ message: "Login successful", token, role: user.role });
+        res.send({ message: "Login successful", role: user.role ,user_id: user.user_id});
     } catch (err) {
         console.error("Error during login:", err);
         res.status(500).send({ error: "Internal server error" });
